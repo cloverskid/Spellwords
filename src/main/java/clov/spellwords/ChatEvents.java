@@ -45,7 +45,7 @@ public class ChatEvents {
 
                 // permission check
                 if (!trigger.permission.isEmpty()
-                        && !Permissions.check(sender, trigger.permission, true)) {
+                        && !Permissions.check(sender, trigger.permission, false)) {
 
                     runCommand(sender, trigger.denyCommand);
 
@@ -60,7 +60,7 @@ public class ChatEvents {
                 if (trigger.cooldownSeconds > 0 && now - last < cooldownMs) {
 
                 long remainingMs = cooldownMs - (now - last);
-                long remainingSeconds = (remainingMs + 999) / 1000; // округление вверх
+                long remainingSeconds = (remainingMs + 999) / 1000; // round up to next second
 
                 String cooldownCommand = trigger.cooldownCommand
                     .replace("{player}", sender.getName().getString())
