@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "spellwords",
+	"version": "${version}",
+	"name": "Spellwords",
+	"description": "Turn words and phrases into commands.\nSpellwords allows server owners to create custom chat triggers that execute commands when players send specific messages.",
+	"authors": [
+		"CloverS_Kid"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/spellwords",
+		"sources": "https://github.com/cloverskid/Spellwords",
+		"issues": "https://github.com/cloverskid/Spellwords/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/clovmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"clov.spellwords.ClovMod"
+		],
+		"fabric-datagen": [
+			"clov.spellwords.client.ClovmodDataGenerator"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.6",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
